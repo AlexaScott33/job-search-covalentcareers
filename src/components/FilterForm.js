@@ -7,19 +7,33 @@ class FilterForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: ''
+      input: '',
+      ptClick: false,
+      ftClick: false
     }
   }
 
-  handleChange(e) {
+  handleChange = (e) => {
     this.setState({
       input: e.target.value
     });
   }
 
+  handlePtClick = () => {
+    this.setState({
+      ptClick: !this.state.ptClick
+    })
+  }
+
+  handleFtClick = () => {
+    this.setState({
+      ftClick: !this.state.ftClick
+    })
+  }
+
   render() {
     //console.log(this.props.jobData);
-    //console.log(this.state);
+    console.log(this.state);
 
     const jobSearchFilter = this.props.jobData.filter((job) => {
       if (job.organization.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()) {
@@ -55,13 +69,18 @@ class FilterForm extends Component {
           <input
           type="checkbox"
           name="part_time_checkbox"
-          // value
+          checked={this.state.ptClick}
+          onChange={this.handlePtClick}
+          value={this.state.ptClick}
           >
           </input> Part-time
           <br/>
           <input
           type="checkbox"
           name="full_time_checkbox"
+          checked={this.state.ftClick}
+          onChange={this.handleFtClick}
+          value={this.state.ftClick}
           // value
           >
           </input> Full-time

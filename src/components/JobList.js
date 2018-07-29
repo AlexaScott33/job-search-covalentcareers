@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 
 class JobList extends Component {
   render() {
-    console.log(this.props);
     const filteredBySearch = this.props.filteredList.map((job, index) => {
       return (
         <li key={index}>

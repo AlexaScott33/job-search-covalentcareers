@@ -33,9 +33,9 @@ class FilterForm extends Component {
 
   render() {
     //console.log(this.props.jobData);
-    console.log(this.state);
+    //console.log(this.state);
 
-    const jobSearchFilter = this.props.jobData.filter((job) => {
+    let jobSearchFilter = this.props.jobData.filter((job) => {
       if (job.organization.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()) {
        return job;
       }
@@ -46,6 +46,24 @@ class FilterForm extends Component {
         return job;
        }
    });
+
+   console.log(jobSearchFilter);
+
+   if (this.state.ptClick === true) {
+     jobSearchFilter = this.props.jobData.filter((job) => {
+      if (job.contract_type === 'PT') {
+        return job;
+      }
+     });
+   }
+
+   if (this.state.ftClick === true) {
+    jobSearchFilter = this.props.jobData.filter((job) => {
+     if (job.contract_type === 'FT') {
+       return job;
+     }
+    });
+  }
 
    console.log(jobSearchFilter);
     return (

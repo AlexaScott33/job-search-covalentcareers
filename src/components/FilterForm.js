@@ -4,7 +4,36 @@ import JobList from './JobList';
 // import './App.css';
 
 class FilterForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: ''
+    }
+  }
+
+  handleChange(e) {
+    this.setState({
+      input: e.target.value
+    });
+  }
+
   render() {
+    //console.log(this.props.jobData);
+    //console.log(this.state);
+
+    const jobSearchFilter = this.props.jobData.filter((job) => {
+      if (job.organization.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()) {
+       return job;
+      }
+      if (job.location.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()) {
+        return job;
+       }
+       if (job.job_title.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()) {
+        return job;
+       }
+   });
+
+   console.log(jobSearchFilter);
     return (
       <div>
       <form>
@@ -13,6 +42,9 @@ class FilterForm extends Component {
           id="search_input"
           className="search_input"
           type="text"
+          onChange={(e) => {
+            this.handleChange(e);
+          }}
           >
           </input>
 
@@ -34,7 +66,7 @@ class FilterForm extends Component {
           >
           </input> Full-time
       </form>
-      <JobList />
+      <JobList filteredList={jobSearchFilter}/>
       </div>
     );
   }

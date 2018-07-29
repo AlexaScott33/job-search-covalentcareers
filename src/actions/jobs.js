@@ -1,4 +1,4 @@
-// import {API_BASE_URL} from '../config';
+import {API_BASE_URL} from '../config';
 
 export const FETCH_JOBS_REQUEST = 'FETCH_JOBS_REQUEST';
 export const fetchJobsRequest = () => ({
@@ -19,12 +19,12 @@ export const fetchJobsError = error => ({
 
 export const fetchJobs = () => dispatch => {
     dispatch(fetchJobsRequest());
-    fetch('../data.json')
+    fetch(`${API_BASE_URL}/api/data`)
     .then(res => res.json())
     .then(data => {
         dispatch(fetchJobsSuccess(data));
     }).catch(err => {
-        dispatch(Jobs(err));
+        dispatch(fetchJobsError(err));
     });
 };
 

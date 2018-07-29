@@ -8,7 +8,8 @@ class JobList extends Component {
     const filteredBySearch = this.props.filteredList.map((job, index) => {
       return (
         <li key={index}>
-        {job.organization}
+        {job.job_title} - {job.contract_type} <br/>
+        {job.organization} in {job.location}
         </li>
       )
     })
@@ -17,7 +18,6 @@ class JobList extends Component {
       <ul>
         {filteredBySearch}
       </ul>
-
       </div>
     );
   }

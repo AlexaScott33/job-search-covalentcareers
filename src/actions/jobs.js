@@ -6,9 +6,9 @@ export const fetchJobsRequest = () => ({
 });
 
 export const FETCH_JOBS_SUCCESS = 'FETCH_JOBS_SUCCESS';
-export const fetchJobSuccess = cheeses => ({
+export const fetchJobsSuccess = data => ({
     type: FETCH_JOBS_SUCCESS,
-    cheeses
+    data
 });
 
 export const FETCH_JOBS_ERROR = 'FETCH_JOBS_ERROR';
@@ -21,8 +21,8 @@ export const fetchJobs = () => dispatch => {
     dispatch(fetchJobsRequest());
     fetch('../data.json')
     .then(res => res.json())
-    .then(jobs => {
-        dispatch(fetchJobsSuccess(jobs));
+    .then(data => {
+        dispatch(fetchJobsSuccess(data));
     }).catch(err => {
         dispatch(Jobs(err));
     });

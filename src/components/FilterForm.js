@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import List from './List';
+import JobList from './JobList';
 // import logo from './logo.svg';
 // import './App.css';
 
@@ -25,16 +25,16 @@ class FilterForm extends Component {
           name="part_time_checkbox"
           // value
           >
-          </input> Part-Time
+          </input> Part-time
           <br/>
           <input
           type="checkbox"
           name="full_time_checkbox"
           // value
           >
-          </input> Full-Time
+          </input> Full-time
       </form>
-      <List />
+      <JobList />
       </div>
     );
   }

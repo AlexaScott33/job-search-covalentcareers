@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 // import './App.css';
 
-class List extends Component {
+class JobList extends Component {
   render() {
     return (
       <div>
@@ -12,4 +12,4 @@ class List extends Component {
   }
 }
 
-export default List;
+export default JobList;

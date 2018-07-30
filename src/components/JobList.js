@@ -18,7 +18,7 @@ class JobList extends Component {
         jobContractType = job.contract_type.replace('PT', 'Part-time');
       }
       return (
-        <li key={index}>
+        <li className="card col-6" key={index}>
         {job.image}
         {job.job_title} - 
         {jobContractType} <br/>
@@ -31,9 +31,11 @@ class JobList extends Component {
     });
     return (
       <div>
-        <ul>
-          {filteredBySearch}
-        </ul>
+        <div>
+          <ul>
+            {filteredBySearch}
+          </ul>
+        </div>
       </div>
     );
   }

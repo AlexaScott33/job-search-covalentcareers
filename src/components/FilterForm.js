@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import JobList from './JobList';
-// import logo from './logo.svg';
-// import './App.css';
+
 
 class FilterForm extends Component {
   constructor(props) {
@@ -32,7 +31,6 @@ class FilterForm extends Component {
   }
 
   render() {
-
     //filters for keyword in company name, location, or job title
     let jobSearchFilter = this.props.jobData.filter((job) => {
       if (job.organization.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()) {
@@ -120,42 +118,45 @@ class FilterForm extends Component {
 
     return (
       <div>
-      <form>
-          <label>Search</label>
+        <div className="row">
+        <form className="col-4">
+          <label htmlFor="search_input">Search</label>
           <input
           id="search_input"
           className="search_input"
           type="text"
           onChange={(e) => {
             this.handleChange(e);
-          }}
-          >
+          }}>
           </input>
 
           <br/>
 
-          <label>Contract Type</label>
+          <label htmlFor="checkbox">Contract Type</label>
           <br/>
           <input
+          id="checkbox"
           type="checkbox"
           name="part_time_checkbox"
           checked={this.state.ptClick}
           onChange={this.handlePtClick}
-          value={this.state.ptClick}
-          >
+          value={this.state.ptClick}>
           </input> Part-time
           <br/>
           <input
+          id="checkbox"
           type="checkbox"
           name="full_time_checkbox"
           checked={this.state.ftClick}
           onChange={this.handleFtClick}
-          value={this.state.ftClick}
-          >
+          value={this.state.ftClick}>
           </input> Full-time
-      </form>
-      <JobList filteredList={jobSearchFilter} />
-      </div>
+        </form>
+        <div className="col-8">
+          <JobList filteredList={jobSearchFilter} />
+        </div>
+      </div> 
+    </div>
     );
   }
 }

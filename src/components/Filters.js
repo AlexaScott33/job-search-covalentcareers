@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import FilterForm from './FilterForm';
-// import logo from './logo.svg';
-// import './App.css';
+
 
 class Filters extends Component {
   render() {
     return (
       <div>
-      <h4>Filters</h4>
-      <FilterForm jobData={this.props.jobs} />
+        <FilterForm jobData={this.props.jobs} />
       </div>
     );
   }

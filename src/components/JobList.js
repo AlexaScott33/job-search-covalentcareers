@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-// import logo from './logo.svg';
-// import './App.css';
+
 
 class JobList extends Component {
   render() {
@@ -18,14 +17,14 @@ class JobList extends Component {
         jobContractType = job.contract_type.replace('PT', 'Part-time');
       }
       return (
-        <li className="card col-6" key={index}>
-        {job.image}
-        {job.job_title} - 
-        {jobContractType} <br/>
-        {job.organization} in {job.location} <br/>
-        {job.score}% Match <br />
-        {job.applicants}+ Applicants <br />
-        {formatedDate} days ago
+        <li key={index}>
+          {job.image}
+          {job.job_title} - 
+          {jobContractType} <br/>
+          {job.organization} in {job.location} <br/>
+          {job.score}% Match <br />
+          {job.applicants}+ Applicants <br />
+          {formatedDate} days ago
         </li>
       );
     });

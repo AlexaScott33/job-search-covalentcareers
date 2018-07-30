@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import JobList from './JobList';
 
+import './FilterForm.css';
 
 class FilterForm extends Component {
   constructor(props) {
@@ -119,40 +120,49 @@ class FilterForm extends Component {
     return (
       <div>
         <div className="row">
-        <form className="col-4">
-          <label htmlFor="search_input">Search</label>
-          <input
-          id="search_input"
-          className="search_input"
-          type="text"
-          onChange={(e) => {
-            this.handleChange(e);
-          }}>
-          </input>
+          <div className="col-sm-4">
+          <div className="panel-default border rounded">
+            <div className="panel-heading">
+              <h6 className="panel-title">Filters</h6>
+            </div>
+            <div className="panel-body">
+              <form className="form-container">
+                <label htmlFor="search-input" className="search-input-label">Search</label> <br/>
+                <input
+                id="search-input"
+                className="search-input form-control"
+                type="text"
+                onChange={(e) => {
+                  this.handleChange(e);
+                }}>
+                </input>
 
-          <br/>
+                <br/>
 
-          <label htmlFor="checkbox">Contract Type</label>
-          <br/>
-          <input
-          id="checkbox"
-          type="checkbox"
-          name="part_time_checkbox"
-          checked={this.state.ptClick}
-          onChange={this.handlePtClick}
-          value={this.state.ptClick}>
-          </input> Part-time
-          <br/>
-          <input
-          id="checkbox"
-          type="checkbox"
-          name="full_time_checkbox"
-          checked={this.state.ftClick}
-          onChange={this.handleFtClick}
-          value={this.state.ftClick}>
-          </input> Full-time
-        </form>
-        <div className="col-8">
+                <label htmlFor="checkbox">Contract Type</label>
+                <br/>
+                <input
+                id="checkbox"
+                type="checkbox"
+                name="part-time-checkbox"
+                checked={this.state.ptClick}
+                onChange={this.handlePtClick}
+                value={this.state.ptClick}>
+                </input> Part-time
+                <br/>
+                <input
+                id="checkbox"
+                type="checkbox"
+                name="full-time-checkbox"
+                checked={this.state.ftClick}
+                onChange={this.handleFtClick}
+                value={this.state.ftClick}>
+                </input> Full-time
+              </form>
+            </div>
+            </div>
+          </div>
+        <div className="col-sm-8">
           <JobList filteredList={jobSearchFilter} />
         </div>
       </div> 

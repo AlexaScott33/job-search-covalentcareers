@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 
+import './JobList.css';
+
 
 class JobList extends Component {
   render() {
@@ -17,7 +19,7 @@ class JobList extends Component {
         jobContractType = job.contract_type.replace('PT', 'Part-time');
       }
       return (
-        <li key={index}>
+        <li className="border-bottom" key={index}>
           {job.image}
           {job.job_title} - 
           {jobContractType} <br/>
@@ -31,7 +33,7 @@ class JobList extends Component {
     return (
       <div>
         <div>
-          <ul>
+          <ul className="list-group">
             {filteredBySearch}
           </ul>
         </div>

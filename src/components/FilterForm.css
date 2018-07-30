@@ -1,0 +1,15 @@
+.panel-default {
+    margin: 1rem 1rem;
+}
+
+.panel-heading {
+    background-color: lightgray;
+}
+
+.panel-title {
+    padding: 0.5rem 0.5rem;
+}
+
+.form-container {
+    padding: 0.5rem 0.5rem; 
+}

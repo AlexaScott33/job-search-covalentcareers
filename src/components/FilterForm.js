@@ -65,6 +65,15 @@ class FilterForm extends Component {
     });
   }
 
+  if (this.state.ptClick === true && this.state.ftClick === true) {
+    jobSearchFilter = this.props.jobData.filter((job) => {
+     if (job.contract_type === 'FT' || job.contract_type === 'PT') {
+       return job;
+     }
+    });
+  }
+
+
    console.log(jobSearchFilter);
     return (
       <div>

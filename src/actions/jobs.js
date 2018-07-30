@@ -1,4 +1,4 @@
-import {API_BASE_URL} from '../config';
+import { API_BASE_URL } from '../config';
 
 export const FETCH_JOBS_REQUEST = 'FETCH_JOBS_REQUEST';
 export const fetchJobsRequest = () => ({

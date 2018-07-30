@@ -6,6 +6,7 @@ import moment from 'moment';
 class JobList extends Component {
   render() {
     const filteredBySearch = this.props.filteredList.map((job, index) => {
+      //set current date to be a specific date back in 2015 
       let currentDate = moment('12/03/2015');
       let jobPostedDate = moment(job.posted_date).format('MM DD YYYY');
       let formatedDate = currentDate.diff(jobPostedDate, 'days');

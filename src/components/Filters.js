@@ -5,7 +5,6 @@ import FilterForm from './FilterForm';
 
 class Filters extends Component {
   render() {
-      //console.log(this.props.jobs)
     return (
       <div>
       <h4>Filters</h4>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import JobList from './JobList';
-
 import './FilterForm.css';
 
 class FilterForm extends Component {

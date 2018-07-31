@@ -9,10 +9,9 @@ export class App extends Component {
     this.props.dispatch(fetchJobs());
   }
   render() {
-    //console.log(this.props.data);
     return (
       <div>
-      <Filters jobs={this.props.data} />
+        <Filters jobs={this.props.data} />
       </div>
     );
   }

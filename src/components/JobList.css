@@ -2,3 +2,49 @@
     list-style-type: none;
     margin: 1rem 1rem;
 }
+
+.p-css {
+    margin-bottom: 0;
+}
+
+.green-background {
+    background-color: #aef4a4;
+    color: #2e5a1c;
+    padding: .1rem .2rem;
+    display: inline-block;
+    margin-right: .5rem;
+    margin-bottom: .8rem;
+    font-size: .8rem;
+}
+
+.blue-background {
+    background-color: #b8dff0;
+    color: #1b3764;
+    padding: .1rem .2rem;
+    display: inline-block;
+    margin-right: .5rem;
+    margin-bottom: .8rem;
+    font-size: .8rem;
+}
+
+.grey-background {
+    background-color: #f2f2f0;
+    color: grey;
+    padding: .1rem .2rem;
+    display: inline-block;
+    margin-right: .5rem;
+    margin-bottom: .8rem;
+    font-size: .8rem;
+}
+
+img {
+    width: 10vh;
+    height: 10vh;
+    float: left;
+    margin-right: .8rem;
+    margin-top: .3rem;
+}
+
+.clearfix {
+    overflow: auto;
+}

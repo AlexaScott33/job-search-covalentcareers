@@ -18,24 +18,45 @@ class JobList extends Component {
       } else if (job.contract_type === 'PT') {
         jobContractType = job.contract_type.replace('PT', 'Part-time');
       }
-      return (
-        <li className="border-bottom" key={index}>
-          {job.image}
-          {job.job_title} - 
-          {jobContractType} <br/>
-          {job.organization} in {job.location} <br/>
-          {job.score}% Match <br />
-          {job.applicants}+ Applicants <br />
-          {formatedDate} days ago
-        </li>
-      );
+
+      if (job.score >= 90) {
+        return (
+          <div key={index}>
+          <div>
+            <img className="rounded" src={`${job.image}`} alt={`${job.organization}`}/>
+          </div>
+          <div className="border-bottom">
+            <p className="text-primary font-weight-bold p-css">{`${job.job_title} - ${jobContractType}`}</p>
+            <p className="p-css font-weight-light">{`${job.organization} in ${job.location}`}</p>
+            <p className="green-background rounded">{job.score}% Match</p>
+            <p className="grey-background rounded">{job.applicants}+ Applicants</p>
+            <p className="grey-background rounded">{formatedDate} days ago</p>
+          </div>
+          </div>
+        );
+      } else if (job.score < 90) {
+        return (
+          <div className="clearfix" key={index}>
+          <div>
+            <img className="rounded" src={`${job.image}`} alt={`${job.organization}`}/>
+          </div>
+          <div className="border-bottom">
+            <p className="text-primary font-weight-bold p-css">{`${job.job_title} - ${jobContractType}`}</p>
+            <p className="p-css font-weight-light">{`${job.organization} in ${job.location}`}</p>
+            <p className="blue-background rounded">{job.score}% Match</p>
+            <p className="grey-background rounded">{job.applicants}+ Applicants</p>
+            <p className="grey-background rounded">{formatedDate} days ago</p>
+          </div>
+          </div>
+        );
+      }
     });
     return (
       <div>
         <div>
-          <ul className="list-group">
+          <div className="list-group">
             {filteredBySearch}
-          </ul>
+          </div>
         </div>
       </div>
     );

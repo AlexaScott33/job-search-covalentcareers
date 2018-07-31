@@ -32,7 +32,7 @@ class FilterForm extends Component {
   }
 
   render() {
-    //filters for keyword in company name, location, or job title
+    //filters for job by company name, location, or job title
     let jobSearchFilter = this.props.jobData.filter((job) => {
       if (job.organization.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()) {
        return job;
@@ -127,7 +127,7 @@ class FilterForm extends Component {
             </div>
             <div className="panel-body">
               <form className="form-container">
-                <label htmlFor="search-input" className="search-input-label">Search</label> <br/>
+                <label className="font-weight-bold search-input-label" htmlFor="search-input">Search</label> <br/>
                 <input
                 id="search-input"
                 className="search-input form-control"
@@ -139,7 +139,7 @@ class FilterForm extends Component {
 
                 <br/>
 
-                <label htmlFor="checkbox">Contract Type</label>
+                <label className="font-weight-bold" htmlFor="checkbox">Contract Type</label>
                 <br/>
                 <input
                 id="checkbox"

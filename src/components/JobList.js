@@ -25,7 +25,7 @@ class JobList extends Component {
           <div>
             <img className="rounded" src={`${job.image}`} alt={`${job.organization}`}/>
           </div>
-          <div className="border-bottom container-css">
+          <div className="border-bottom">
             <p className="text-primary font-weight-bold p-title-css">{`${job.job_title} - ${jobContractType}`}</p>
             <p className="font-weight-light p-css">{`${job.organization} in ${job.location}`}</p>
             <p className="green-background rounded">{job.score}% Match</p>
@@ -40,7 +40,7 @@ class JobList extends Component {
           <div>
             <img className="rounded" src={`${job.image}`} alt={`${job.organization}`}/>
           </div>
-          <div className="border-bottom container-css">
+          <div className="border-bottom">
             <p className="text-primary font-weight-bold p-title-css">{`${job.job_title} - ${jobContractType}`}</p>
             <p className="font-weight-light p-css ">{`${job.organization} in ${job.location}`}</p>
             <p className="blue-background rounded">{job.score}% Match</p>

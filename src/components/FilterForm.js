@@ -141,7 +141,7 @@ class FilterForm extends Component {
     return (
       <div>
         <div className="row">
-          <div className="col-md-4">
+          <div className="col-md-6 col-lg-4">
           <div className="panel-default border rounded">
             <div className="panel-heading">
               <h6 className="panel-title">Filters</h6>
@@ -183,7 +183,7 @@ class FilterForm extends Component {
             </div>
             </div>
           </div>
-        <div className="col-md-8">
+        <div className="col-md-6 col-lg-8">
           <JobList filteredList={jobSearchFilter} />
         </div>
       </div> 

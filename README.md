@@ -22,9 +22,11 @@
 ## Screenshots
 
 Laptop View
+
 <img width="1246" alt="screen shot 2018-07-31 at 12 02 02 pm" src="https://user-images.githubusercontent.com/35544816/43483114-87fd3e4e-94bf-11e8-9297-0148afdd60ba.png">
 
 Mobile View
+
 <img width="358" alt="screen shot 2018-07-31 at 12 03 30 pm" src="https://user-images.githubusercontent.com/35544816/43483137-94932b3c-94bf-11e8-9aba-fd1fe694b7a8.png">
 
 

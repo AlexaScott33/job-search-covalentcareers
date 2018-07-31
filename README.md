@@ -19,6 +19,7 @@
 * Run: `node index.js`
     * Starts a server running at http://localhost:8080
 
+Backend server repository can be found [here](https://github.com/AlexaScott33/job-search-covalentcareers-server)
 ## Screenshots
 
 Laptop View

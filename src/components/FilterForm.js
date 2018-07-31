@@ -33,94 +33,115 @@ class FilterForm extends Component {
 
   render() {
     //filters for job by company name, location, or job title
-    let jobSearchFilter = this.props.jobData.filter((job) => {
-      if (job.organization.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()) {
-       return job;
-      }
-      if (job.location.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()) {
-        return job;
-       }
-       if (job.job_title.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()) {
-        return job;
-       } 
-   });
+    let jobSearchFilter = this.props.jobData.filter((job) => (
+      job.organization.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()
+      ?
+        job
+      :
+      job.location.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()
+      ?
+        job
+      :    
+      job.job_title.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase() 
+      ?
+        job
+      : 
+      null    
+    ));
 
    //filters for PT jobs that match that keyword
    if (this.state.input !== '' && this.state.ptClick === true) {
-    jobSearchFilter = this.props.jobData.filter((job) => {
-      if (job.contract_type === 'PT' && job.organization.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()) {
-        return job;
-      }
-      if (job.contract_type === 'PT' && job.location.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()) {
-        return job;
-      }
-      if (job.contract_type === 'PT' && job.job_title.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()) {
-        return job;
-      }
-    }); 
+    jobSearchFilter = this.props.jobData.filter((job) => (
+      job.contract_type === 'PT' && job.organization.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()
+      ?
+        job
+      :
+      job.contract_type === 'PT' && job.location.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()
+      ?
+        job
+      :
+      job.contract_type === 'PT' && job.job_title.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()
+      ?
+      job
+      :
+      null
+    )); 
   }
 
   //filters for FT jobs that match that keyword
   if (this.state.input !== '' && this.state.ftClick === true) {
-    jobSearchFilter = this.props.jobData.filter((job) => {
-      if (job.contract_type === 'FT' && job.organization.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()) {
-        return job;
-      }
-      if (job.contract_type === 'FT' && job.location.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()) {
-        return job;
-      }
-      if (job.contract_type === 'FT' && job.job_title.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()) {
-        return job;
-      }
-    }); 
+    jobSearchFilter = this.props.jobData.filter((job) => (
+      job.contract_type === 'FT' && job.organization.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()
+      ?
+        job
+      :
+      job.contract_type === 'FT' && job.location.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()
+      ?
+        job
+      :
+      job.contract_type === 'FT' && job.job_title.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()
+      ?
+        job
+      :
+      null
+    )); 
   }
 
   //filters for all PT jobs
-   if (this.state.ptClick === true && this.state.input === '') {
-     jobSearchFilter = this.props.jobData.filter((job) => {
-      if (job.contract_type === 'PT') {
-        return job;
-      }
-     });
-   }
+  if (this.state.ptClick === true && this.state.input === '') {
+    jobSearchFilter = this.props.jobData.filter((job) => (
+     job.contract_type === 'PT'
+     ?
+      job
+     :
+     null
+    ));
+  }
 
    //filters for all FT jobs
    if (this.state.ftClick === true && this.state.input === '') {
-    jobSearchFilter = this.props.jobData.filter((job) => {
-     if (job.contract_type === 'FT') {
-       return job;
-     }
-    });
+    jobSearchFilter = this.props.jobData.filter((job) => (
+     job.contract_type === 'FT'
+     ?
+      job
+     :
+     null
+    ));
   }
 
   //filters for all PT and FT jobs
   if (this.state.ptClick === true && this.state.ftClick === true && this.state.input === '') {
-    jobSearchFilter = this.props.jobData.filter((job) => {
-     if (job.contract_type === 'FT' || job.contract_type === 'PT') {
-       return job;
-     }
-    });
+    jobSearchFilter = this.props.jobData.filter((job) => (
+     job.contract_type === 'FT' || job.contract_type === 'PT'
+      ?
+       job
+      :
+      null
+    ));
   }
 
   //filters for PT and FT jobs that match that keyword
   if (this.state.ptClick === true && this.state.ftClick === true && this.state.input !== '') {
-    jobSearchFilter = this.props.jobData.filter((job) => {
-      if ((job.contract_type === 'PT' || job.contract_type === 'FT') && job.organization.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()) {
-        return job;
-      }
-      if ((job.contract_type === 'PT' || job.contract_type === 'FT') && job.location.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()) {
-        return job;
-      }
-      if ((job.contract_type === 'PT' || job.contract_type === 'FT') && job.job_title.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()) {
-        return job;
-      }
-    }); 
+    jobSearchFilter = this.props.jobData.filter((job) => (
+      (job.contract_type === 'PT' || job.contract_type === 'FT') && job.organization.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()
+        ?
+        job
+      :
+      (job.contract_type === 'PT' || job.contract_type === 'FT') && job.location.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()
+        ?
+         job
+      :
+      (job.contract_type === 'PT' || job.contract_type === 'FT') && job.job_title.slice(0, this.state.input.length).toLowerCase() === this.state.input.toLowerCase()
+       ?
+       job
+      :
+      null
+    )); 
   }
-
     return (
       <div>
         <div className="row">
-          <div className="col-sm-4">
+          <div className="col-md-4">
           <div className="panel-default border rounded">
             <div className="panel-heading">
               <h6 className="panel-title">Filters</h6>
@@ -162,7 +183,7 @@ class FilterForm extends Component {
             </div>
             </div>
           </div>
-        <div className="col-sm-8">
+        <div className="col-md-8">
           <JobList filteredList={jobSearchFilter} />
         </div>
       </div> 
